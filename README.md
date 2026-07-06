@@ -23,4 +23,5 @@ This symlinks each tracked file into your home directory.
 
 ## Notes
 
-- `.gitconfig` references absolute paths (e.g. `/home/skinzy/.ssh/...`) tied to this specific machine's signing key. On a new machine, generate a fresh signing key (see `operations-lab` Module 01, Lab 04) and update the `signingkey` and `allowedSignersFile` paths accordingly.
+- `.gitconfig` uses `~`-relative paths for `signingkey` and `allowedSignersFile`, so it works across machines/usernames without editing. On a new machine, still generate a fresh signing key and register it with GitHub (see `operations-lab` Module 01, Lab 04) — the config will pick it up automatically as long as it lives at the same `~/.ssh/` filenames.
+- This repo is public. Never add real secrets (API keys, tokens) directly into `.bashrc` or any tracked file. Keep secrets in an untracked file (e.g. `~/.secrets`, listed in `.gitignore`) and `source` it from `.bashrc` instead.
