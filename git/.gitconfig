@@ -1,0 +1,16 @@
+[user]
+	name = stephanie
+	email = 232054776+stephcloud@users.noreply.github.com
+	signingkey = /home/skinzy/.ssh/id_ed25519_signing.pub
+[init]
+	defaultBranch = main
+[credential]
+	helper = store
+[pull]
+	rebase = true
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[gpg "ssh"]
+	allowedSignersFile = /home/skinzy/.ssh/allowed_signers
